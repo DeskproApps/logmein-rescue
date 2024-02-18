@@ -11,6 +11,9 @@ dependencies:
   '@deskpro/deskpro-ui':
     specifier: ^7.18.0
     version: 7.18.0(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+  '@fortawesome/free-solid-svg-icons':
+    specifier: ^6.5.1
+    version: 6.5.1
   '@heroicons/react':
     specifier: ^1.0.6
     version: 1.0.6(react@18.2.0)
@@ -32,6 +35,9 @@ dependencies:
   react:
     specifier: ^18.2.0
     version: 18.2.0
+  react-copy-to-clipboard:
+    specifier: ^5.1.0
+    version: 5.1.0(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
