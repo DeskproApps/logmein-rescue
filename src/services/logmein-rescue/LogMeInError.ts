@@ -1,12 +1,12 @@
 import type { LogMeInAPIError } from "./types";
 
 export type InitData = {
-  status: number,
+  status?: number,
   data: LogMeInAPIError,
 };
 
 class LogMeInError extends Error {
-  status: number;
+  status?: number;
   data: LogMeInAPIError;
 
   constructor({ status, data }: InitData) {

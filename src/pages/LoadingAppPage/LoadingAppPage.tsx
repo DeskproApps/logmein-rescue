@@ -1,9 +1,9 @@
 import { LoadingSpinner } from "@deskpro/app-sdk";
-import { useSetTitle } from "../../hooks";
+import { useCheckAuth } from "./hooks";
 import type { FC } from "react";
 
 const LoadingAppPage: FC = () => {
-  useSetTitle("LogMeIn Rescue");
+  useCheckAuth();
 
   return (
     <LoadingSpinner/>
