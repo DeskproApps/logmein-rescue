@@ -1,10 +1,11 @@
 import { size } from "lodash";
 import { Title } from "@deskpro/app-sdk";
+import { NoFoundSessions } from "../../../common";
 import { SessionItem } from "../../../SessionItem";
 import type { FC } from "react";
 import type { Session } from "../../../../services/logmein-rescue/types";
 
-type Props = {
+export type Props = {
   sessions: Session[],
 };
 
@@ -13,9 +14,11 @@ const Queue: FC<Props> = ({ sessions }) => {
     <>
       <Title title={`My queue (${size(sessions)})`}/>
 
-      {sessions.map((session) => (
-        <SessionItem key={session.iID} session={session}/>
-      ))}
+      <NoFoundSessions sessions={sessions}>
+        {(sessions) => sessions.map((session) => (
+          <SessionItem key={session.iID} session={session}/>
+        ))}
+      </NoFoundSessions>
     </>
   );
 };

@@ -1,32 +1,37 @@
+import { unescape } from "lodash";
 import { Stack } from "@deskpro/deskpro-ui";
 import { Property } from "@deskpro/app-sdk";
+import { getPinCode } from "../../../../utils";
 import { Button } from "../../../common";
 import type { FC } from "react";
 
-type Props = {
-  newSessionPinCode: string;
+export type Props = {
+  newSessionInviteLink: string;
   onInsertLink: (sessionLink: string) => void;
 };
 
 const NewSessionPinCode: FC<Props> = ({
   onInsertLink,
-  newSessionPinCode,
+  newSessionInviteLink,
 }) => {
-  const sessionLink = `https://secure.logmeinrescue.com/R?i=2&Code=${newSessionPinCode}`;
+  const unescapeLink = unescape(newSessionInviteLink);
+  const pinCode = getPinCode(unescapeLink);
 
   return (
     <>
-      <Property
-        text={`PIN: ${newSessionPinCode}`}
-        copyText={newSessionPinCode}
-      />
+      {pinCode && (
+        <Property
+          text={`PIN: ${pinCode}`}
+          copyText={pinCode}
+        />
+      )}
       <Property
         label="Direct link"
-        text={sessionLink}
-        copyText={sessionLink}
+        text={unescapeLink}
+        copyText={unescapeLink}
       />
       <Stack justify="space-between" style={{ width: "100%", marginBottom: "14px" }}>
-        <Button text="Insert link" intent="secondary" onClick={() => onInsertLink(sessionLink)} />
+        <Button text="Insert link" intent="secondary" onClick={() => onInsertLink(unescapeLink)} />
       </Stack>
     </>
   );

@@ -10,7 +10,7 @@ type Props = {
   sessions: Session[],
   error: Maybe<string|string[]>;
   onCreate: (sessionName: string) => void;
-  newSessionPinCode: Maybe<string>;
+  newSessionInviteLink: Maybe<string>;
   onInsertLink: (sessionLink: string) => void;
 };
 
@@ -20,15 +20,15 @@ const Home: FC<Props> = ({
   onCreate,
   ticketId,
   onInsertLink,
-  newSessionPinCode,
+  newSessionInviteLink,
 }) => {
   return (
     <Container>
       {error && <ErrorBlock text={error} />}
 
-      {!newSessionPinCode
+      {!newSessionInviteLink
         ? <NewSessionForm onCreate={onCreate} ticketId={ticketId}/>
-        : <NewSessionPinCode newSessionPinCode={newSessionPinCode} onInsertLink={onInsertLink}/>
+        : <NewSessionPinCode newSessionInviteLink={newSessionInviteLink} onInsertLink={onInsertLink}/>
       }
 
       <HorizontalDivider style={{ margin: "15px 0" }}/>

@@ -1,13 +1,14 @@
 import {
   Title,
-  Property,
   TwoProperties,
   HorizontalDivider,
 } from "@deskpro/app-sdk";
+import { format } from "../../utils/date";
+import { TIME_FORMAT } from "../../constants";
 import type { FC } from "react";
 import type { Session } from "../../services/logmein-rescue/types";
 
-type Props = {
+export type Props = {
   session: Session;
 };
 
@@ -23,9 +24,11 @@ const SessionItem: FC<Props> = ({ session }) => (
       rightLabel="Status"
       rightText={session.sStatus}
     />
-    <Property
-      label="Technician"
-      text={session.sTechnician}
+    <TwoProperties
+      leftLabel="Technician"
+      leftText={session.sTechnician}
+      rightLabel="Start Time"
+      rightText={`${format(session.sStartTime)} ${format(session.sStartTime, TIME_FORMAT)}`}
     />
     <HorizontalDivider style={{ marginBottom: 10 }}/>
   </>

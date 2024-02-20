@@ -7,7 +7,7 @@ import { Input } from "@deskpro/deskpro-ui";
 import { Button, Label } from "../../../common";
 import type { FC } from "react";
 
-type Props = {
+export type Props = {
   ticketId: string;
   onCreate: (sessionName: string) => void;
 };

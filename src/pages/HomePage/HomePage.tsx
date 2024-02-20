@@ -18,7 +18,7 @@ const HomePage: FC = () => {
   const { context } = useDeskproLatestAppContext() as { context: TicketContext };
   const { asyncErrorHandler } = useAsyncError();
   const [error, setError] = useState<Maybe<string>>(null);
-  const [newSessionPinCode, setNewSessionPinCode] = useState<Maybe<string>>(null);
+  const [newSessionInviteLink, setNewSessionInviteLink] = useState<Maybe<string>>(null);
   const { account, sessions, isLoading: isLoadingSessions } = useSessions();
   const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
   const isLoading = isLoadingSessions || !ticketId;
@@ -31,7 +31,7 @@ const HomePage: FC = () => {
     setError(null);
 
     return createNewSessionService(client, account.iTechID, sessionName, ticketId)
-      .then(setNewSessionPinCode)
+      .then(setNewSessionInviteLink)
       .catch((err) => {
         const error = get(SOAP_ERRORS, [err.data]);
 
@@ -70,7 +70,7 @@ const HomePage: FC = () => {
       onCreate={onCreate}
       ticketId={ticketId}
       onInsertLink={onInsertLink}
-      newSessionPinCode={newSessionPinCode}
+      newSessionInviteLink={newSessionInviteLink}
     />
   );
 };

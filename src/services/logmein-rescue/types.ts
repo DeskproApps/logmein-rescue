@@ -27,19 +27,19 @@ export type Account = {
 };
 
 export type NewSession = {
-  requestPINCodeV3Result:
-    |"requestPINCode_OK"
-    |"requestPINCode_Error"
-    |"requestPINCode_NotLoggedIn"
-    |"requestPINCode_NotTechnician"
-    |"requestPINCode_NoTechConsoleRunning"
-    |"requestPINCode_OutOfPINCodes"
-    |"requestPINCode_PollRateExceeded"
-    |"requestPINCode_User_Is_Deleted"
-    |"requestPINCode_Invalid_SecretAuthCode"
-    |"requestPINCode_User_Deleted_Or_Disabled"
-    |"requestPINCode_NoAccessToLens";
-  sPINCode: string;
+  requestInvitationLinkResult:
+    |"requestInvitationLink_Error"
+    |"requestInvitationLink_OK"
+    |"requestInvitationLink_NotLoggedIn"
+    |"requestInvitationLink_NotTechnician"
+    |"requestInvitationLink_NoTechConsoleRunning"
+    |"requestInvitationLink_OutOfPINCodes"
+    |"requestInvitationLink_PollRateExceeded"
+    |"requestInvitationLink_User_Is_Deleted"
+    |"requestInvitationLink_Invalid_SecretAuthCode"
+    |"requestInvitationLink_User_Deleted_Or_Disabled"
+    |"requestInvitationLink_NoAccessToLens";
+  sInvitationLink: string;
 };
 
 export type Status =
