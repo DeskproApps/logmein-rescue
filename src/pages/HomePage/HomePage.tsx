@@ -66,6 +66,7 @@ const HomePage: FC = () => {
   return (
     <Home
       error={error}
+      account={account}
       sessions={sessions}
       onCreate={onCreate}
       ticketId={ticketId}

@@ -25,7 +25,7 @@ const useSessions: UseSessions = () => {
   );
 
   return {
-    isLoading: [account, sessions].some(({ isLoading }) => isLoading),
+    isLoading: [account].some(({ isLoading }) => isLoading),
     account: account.data as Account,
     sessions: sessions.data || [],
   };
