@@ -34,7 +34,7 @@ const LoginPage: FC = () => {
         }
       })
       .catch((err) => {
-        setError(get(SOAP_ERRORS, ["authCode", err.data], DEFAULT_ERROR))
+        setError(get(SOAP_ERRORS, [err.data], DEFAULT_ERROR))
       });
   }, [client, navigate]);
   return (
