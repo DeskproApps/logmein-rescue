@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/logmein-rescue",
   "title": "LogMeIn Rescue",
   "description": "Create instant remote session from a ticket and share them with your users who need support.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
