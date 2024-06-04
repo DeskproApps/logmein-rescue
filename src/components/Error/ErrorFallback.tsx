@@ -1,5 +1,6 @@
+import { get } from "lodash";
 import { Stack } from "@deskpro/deskpro-ui";
-import { DEFAULT_ERROR } from "../../constants";
+import { DEFAULT_ERROR, SOAP_ERRORS } from "../../constants";
 import { LogMeInError } from "../../services/logmein-rescue";
 import { Container, ErrorBlock } from "../common";
 import type { FC } from "react";
@@ -11,13 +12,14 @@ type Props = Omit<FallbackProps, "error"> & {
 
 const ErrorFallback: FC<Props> = ({ error }) => {
   const message = DEFAULT_ERROR;
-
-  // eslint-disable-next-line no-console
-  console.error(error);
+  let consoleError = DEFAULT_ERROR;
 
   if (error instanceof LogMeInError) {
-    //..
+    consoleError = get(SOAP_ERRORS, [error.data], DEFAULT_ERROR);
   }
+
+  // eslint-disable-next-line no-console
+  console.error(consoleError);
 
   return (
     <Container>

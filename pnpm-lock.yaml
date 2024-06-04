@@ -6,11 +6,14 @@ settings:
 
 dependencies:
   '@deskpro/app-sdk':
-    specifier: ^3.0.15
-    version: 3.0.15(@babel/core@7.23.9)(@deskpro/deskpro-ui@7.18.0)(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)
+    specifier: 3.0.20
+    version: 3.0.20(@babel/core@7.23.9)(@deskpro/deskpro-ui@7.18.3)(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)
   '@deskpro/deskpro-ui':
-    specifier: ^7.18.0
-    version: 7.18.0(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+    specifier: ^7.18.3
+    version: 7.18.3(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+  '@fortawesome/free-solid-svg-icons':
+    specifier: ^6.5.1
+    version: 6.5.1
   '@heroicons/react':
     specifier: ^1.0.6
     version: 1.0.6(react@18.2.0)
@@ -20,9 +23,9 @@ dependencies:
   '@tanstack/react-query':
     specifier: ^4.36.1
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
-  iframe-resizer:
-    specifier: ^4.3.9
-    version: 4.3.9
+  date-fns:
+    specifier: ^3.3.1
+    version: 3.3.1
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -32,6 +35,9 @@ dependencies:
   react:
     specifier: ^18.2.0
     version: 18.2.0
+  react-copy-to-clipboard:
+    specifier: ^5.1.0
+    version: 5.1.0(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
@@ -518,8 +524,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@deskpro/app-sdk@3.0.15(@babel/core@7.23.9)(@deskpro/deskpro-ui@7.18.0)(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5):
-    resolution: {integrity: sha512-LkgXL8G3Ran9XdG2AhriUkLpesbkT6dVT+o8fBBQr5EiDtTL6Omh3dO07VSXabttr3x7rR0+1A4yo9A5wBk1IA==}
+  /@deskpro/app-sdk@3.0.20(@babel/core@7.23.9)(@deskpro/deskpro-ui@7.18.3)(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5):
+    resolution: {integrity: sha512-Qw9Hv+D5gawdk3yN9qhv38S0ua05GQjKDUN6LZKS8p2ttuisH69sLtFahxS83JpnMfuf34l4C4Ooiqomgd9S/g==}
     engines: {node: ^16.0.0}
     peerDependencies:
       '@deskpro/deskpro-ui': ^7
@@ -528,7 +534,7 @@ packages:
       react: ^18
       react-dom: ^18
     dependencies:
-      '@deskpro/deskpro-ui': 7.18.0(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+      '@deskpro/deskpro-ui': 7.18.3(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
       '@fortawesome/fontawesome-svg-core': 6.5.1
       '@fortawesome/free-brands-svg-icons': 6.5.1
       '@fortawesome/free-regular-svg-icons': 6.5.1
@@ -560,8 +566,8 @@ packages:
       - typescript
     dev: false
 
-  /@deskpro/deskpro-ui@7.18.0(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11):
-    resolution: {integrity: sha512-UliZbZXcLE2QpG+DmNzFkm8n+na2kCyfMiaKuy4fNMCmkYl9pftnBEbK4TxM7OOUiem+wo2/CHM2/C6WD6uYXw==}
+  /@deskpro/deskpro-ui@7.18.3(@types/web@0.0.139)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11):
+    resolution: {integrity: sha512-FzHX2NRAPAwr0YDcWFh9ZxNgtItGJIoLC65QcGRJgGFAbsHF93E+OrF9xKm1HQr2Ag6ZwlUk4+HNh18SopmVCA==}
     engines: {node: ^16.0.0}
     peerDependencies:
       '@typescript/lib-dom': npm:@types/web
@@ -2569,6 +2575,10 @@ packages:
       whatwg-url: 11.0.0
     dev: true
 
+  /date-fns@3.3.1:
+    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
+    dev: false
+
   /debug@4.3.4(supports-color@5.5.0):
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -3343,11 +3353,6 @@ packages:
     dependencies:
       safer-buffer: 2.1.2
     dev: true
-
-  /iframe-resizer@4.3.9:
-    resolution: {integrity: sha512-MCt+V/THB4a9OcAdrWo5NsI2CRpeMM4ijhTfiLtsdgDJXWYXf62Ve8yO8rKGmYNs991zty/EolYOxActlkfU+A==}
-    engines: {node: '>=0.8.0'}
-    dev: false
 
   /ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}

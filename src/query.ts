@@ -13,7 +13,8 @@ const queryClient = new QueryClient({
 });
 
 const QueryKey = {
-  //..
+  ACCOUNT: "account",
+  SESSION: "session",
 }
 
 export { queryClient, QueryKey };

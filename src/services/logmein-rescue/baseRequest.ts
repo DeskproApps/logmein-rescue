@@ -1,7 +1,7 @@
 import { get, isEmpty, isString } from "lodash";
 import { convert } from "xmlbuilder2";
 import { proxyFetch } from "@deskpro/app-sdk";
-import { SOAP_URL } from "../../constants";
+import { SOAP_URL, DEFAULT_ERROR } from "../../constants";
 import { getQueryParams } from "../../utils";
 import { LogMeInError } from "./LogMeInError";
 import type { Request, FetchOptions } from "../../types";
@@ -42,7 +42,7 @@ const baseRequest: Request = async (client, {
     try {
       errorData = await res.text();
     } catch (e) {
-      errorData = {};
+      errorData = DEFAULT_ERROR;
     }
 
     throw new LogMeInError({
