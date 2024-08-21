@@ -7,26 +7,29 @@ import { DeskproAppProvider, LoadingSpinner } from "@deskpro/app-sdk";
 import { queryClient } from "./query";
 import { App } from "./App";
 import { ErrorFallback } from "./components";
-import "iframe-resizer/js/iframeResizer.contentWindow.js";
 import "flatpickr/dist/themes/light.css";
 import "tippy.js/dist/tippy.css";
-import "simplebar/dist/simplebar.min.css";
 import "@deskpro/deskpro-ui/dist/deskpro-ui.css";
 import "@deskpro/deskpro-ui/dist/deskpro-custom-icons.css";
+import "./main.css";
+import "simplebar/dist/simplebar.min.css";
+import { Scrollbar } from "@deskpro/deskpro-ui";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render((
   <StrictMode>
-    <DeskproAppProvider>
-      <HashRouter>
-        <QueryClientProvider client={queryClient}>
-          <Suspense fallback={<LoadingSpinner/>}>
-            <ErrorBoundary FallbackComponent={ErrorFallback}>
-              <App />
-            </ErrorBoundary>
-          </Suspense>
-        </QueryClientProvider>
-      </HashRouter>
-    </DeskproAppProvider>
+    <Scrollbar style={{ height: "100%", width: "100%" }}>
+      <DeskproAppProvider>
+        <HashRouter>
+          <QueryClientProvider client={queryClient}>
+            <Suspense fallback={<LoadingSpinner />}>
+              <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <App />
+              </ErrorBoundary>
+            </Suspense>
+          </QueryClientProvider>
+        </HashRouter>
+      </DeskproAppProvider>
+    </Scrollbar>
   </StrictMode>
 ));
