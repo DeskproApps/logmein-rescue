@@ -46,19 +46,16 @@ const App: FC = () => {
 
   if (!client || isLoading) {
     return (
-      <LoadingSpinner/>
+      <LoadingSpinner />
     );
   }
 
   return (
-    <>
-      <Routes>
-        <Route path="/login" element={<LoginPage/>}/>)
-        <Route path="/home" element={<HomePage/>}/>)
-        <Route index element={<LoadingAppPage/>} />
-      </Routes>
-      <br/><br/><br/>
-    </>
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route index element={<LoadingAppPage />} />
+    </Routes>
   );
 }
 
