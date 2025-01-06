@@ -1,6 +1,6 @@
 import type { To, ParamKeyValuePair } from "react-router-dom";
 import type { DropdownValueType } from "@deskpro/deskpro-ui";
-import type { Context, IDeskproClient, V2ProxyRequestInitBody } from "@deskpro/app-sdk";
+import type { Context, IDeskproClient } from "@deskpro/app-sdk";
 import type { Response } from "./services/logmein-rescue/types";
 
 /** Common types */
@@ -22,7 +22,7 @@ export type RequestParams = {
   endpoint?: string,
   method?: ApiRequestMethod,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data?: Dict<any>|RequestInit["body"]|V2ProxyRequestInitBody["body"]
+  data?: Dict<any>|RequestInit["body"]
   headers?: Dict<string>,
   queryParams?: string|Dict<string>|ParamKeyValuePair[],
 };
@@ -31,9 +31,6 @@ export type Request = <T = string>(
   client: IDeskproClient,
   params: RequestParams,
 ) => Response<T>;
-
-// V2ProxyRequestInit
-export type FetchOptions = Pick<RequestParams, "method"|"headers"> & V2ProxyRequestInitBody;
 
 /** Deskpro types */
 export type Settings = {

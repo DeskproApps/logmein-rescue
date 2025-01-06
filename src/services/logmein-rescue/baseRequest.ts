@@ -4,7 +4,7 @@ import { proxyFetch } from "@deskpro/app-sdk";
 import { SOAP_URL } from "../../constants";
 import { getQueryParams } from "../../utils";
 import { LogMeInError } from "./LogMeInError";
-import type { Request, FetchOptions } from "../../types";
+import type { Request } from "../../types";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -19,7 +19,7 @@ const baseRequest: Request = async (client, {
 
   const params = getQueryParams(queryParams);
   const requestUrl = `${SOAP_URL}${isEmpty(params) ? "": `?${params}`}`;
-  const options: FetchOptions = {
+  const options: RequestInit = {
     method,
     headers: {
       ...customHeaders,
