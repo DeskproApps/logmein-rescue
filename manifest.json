@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/logmein-rescue",
   "title": "LogMeIn Rescue",
   "description": "",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
