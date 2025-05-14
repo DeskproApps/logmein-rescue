@@ -25,7 +25,7 @@
     "polished": "^4.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-error-boundary": "^4.1.2",
+    "react-error-boundary": "^6.0.0",
     "react-hook-form": "^7.55.0",
     "react-is": "^18.3.1",
     "react-resize-observer": "^1.1.1",
