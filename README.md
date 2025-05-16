@@ -45,7 +45,7 @@ To make development easier and avoid version conflicts, we recommend using **Dev
    pnpm start
    ```
 
-You should now be able to view the app in your browser. For more information about developing [Deskpro apps](https://www.deskpro.com/apps), [Visit the docs](https://support.deskpro.com/ga/guides/developers/anatomy-of-an-app).
+You should now be able to view the app in your browser. For more information about developing [Deskpro apps](https://www.deskpro.com/apps), [visit the docs](https://support.deskpro.com/ga/guides/developers/anatomy-of-an-app).
 
 ### Natively
 _We recommend using the DevContainer mentioned above for Consistency, Speed and Isolation._
@@ -69,7 +69,7 @@ pnpm install
 pnpm start
 ```
 
-You should now be able to view the app in your browser. For more information about developing [Deskpro Apps](https://www.deskpro.com/apps), [Visit the Docs](https://support.deskpro.com/ga/guides/developers/anatomy-of-an-app).
+You should now be able to view the app in your browser. For more information about developing [Deskpro Apps](https://www.deskpro.com/apps), [visit the Docs](https://support.deskpro.com/ga/guides/developers/anatomy-of-an-app).
 
 ### Testing
 We've included `jest` to run tests. It will look anywhere in `/src` for test suite files ending in `.test.tsx` or `.test.ts`.
